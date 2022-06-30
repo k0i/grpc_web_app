@@ -1,0 +1,17 @@
+version: v1beta1
+build:
+  roots:
+    - proto
+    - google
+    - gapic
+lint:
+  use:
+    - DEFAULT
+  ignore:
+    - googleapis
+breaking:
+  use:
+    - FILE
+    - PACKAGE
+    - WIRE
+    - WIRE_JSON

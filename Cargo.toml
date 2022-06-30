@@ -1,0 +1,34 @@
+[package]
+name = "kb"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+path = "src/lib.rs"
+[[bin]]
+path = "src/main.rs"
+name = "kb"
+
+[dependencies]
+actix-web = "4"
+prost = "0.10.4"
+reqwest = "0.11.11"
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tonic = "0.7.2"
+tonic-reflection = "0.4.0"
+ulid = "0.6.0"
+serde = { version = "1", features = ["derive"]}
+config = "0.11config = "0.11""
+[dependencies.sqlx]
+version = "0.5.7"
+default-features = false
+features = [
+    "runtime-actix-rustls", 
+    "macros", 
+    "postgres", 
+    "chrono", 
+    "migrate"
+]
+
+[build-dependencies]
+tonic-build = "0.7.2"

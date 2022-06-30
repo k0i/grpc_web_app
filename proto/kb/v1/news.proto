@@ -1,0 +1,20 @@
+syntax = "proto3";
+package kb.v1;
+
+service NewsService {
+    rpc ListNews(ListNewsRequest) returns (ListNewsResponse);
+}
+
+message ListNewsRequest {
+    string date_from = 1;
+    string date_to = 2;
+}
+
+message ListNewsResponse {
+    repeated News news = 1;
+}
+
+message News {
+    string title    = 1;
+    string contents = 2;
+}
